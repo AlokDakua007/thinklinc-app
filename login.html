@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/logo.webp">
+<link rel="stylesheet" href="styles.css">
+<title>Log in · THINK LINC</title>
+</head>
+<body>
+<main class="phone login">
+  <div class="statusbar" aria-hidden="true"><span class="statusbar__time">9:41</span><img src="assets/status-icons.svg" alt=""></div>
+  <img class="login__logo" src="assets/logo.webp" alt="THINK LINC · Sabka Sath Sabka Vikas">
+  <div class="login__body">
+    <form class="login__form" id="loginForm" novalidate>
+      <div>
+        <h1 class="login__title">Welcome Back !</h1>
+        <p class="login__sub">Log In to Continue</p>
+      </div>
+      <fieldset class="role">
+        <legend>I am a</legend>
+        <div class="role__chips">
+          <label class="chip"><input type="radio" name="role" value="dealer" checked><span>Dealer</span></label>
+          <label class="chip"><input type="radio" name="role" value="retailer"><span>Retailer</span></label>
+          <label class="chip"><input type="radio" name="role" value="other"><span>Other</span></label>
+        </div>
+      </fieldset>
+      <div class="fields">
+        <div class="fields__box" id="fieldsBox">
+          <label class="field"><span class="sr-only">Code or phone number</span><input id="user" name="user" type="text" placeholder="Enter Your Code / Phone No." autocomplete="username"></label>
+          <label class="field"><span class="sr-only">Password</span><input id="pass" name="pass" type="password" placeholder="Password" autocomplete="current-password"></label>
+        </div>
+        <a class="forgot" href="#">Forgot Password?</a>
+      </div>
+      <button class="btn btn--primary" type="submit">Login</button>
+    </form>
+    <div class="login__first">
+      <p>First time here..?</p>
+      <a class="btn btn--soft" href="#">Activate your account</a>
+    </div>
+  </div>
+</main>
+<script>
+  // Demo login: any non-empty code + password goes to the home screen
+  const form = document.getElementById('loginForm');
+  const box = document.getElementById('fieldsBox');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = form.user.value.trim(), pass = form.pass.value.trim();
+    if (!user || !pass) {
+      box.classList.remove('is-error'); void box.offsetWidth; box.classList.add('is-error');
+      (user ? form.pass : form.user).focus();
+      return;
+    }
+    try { sessionStorage.setItem('tl_role', form.role.value); } catch (_) {}
+    location.href = 'home.html';
+  });
+  box.addEventListener('animationend', () => box.classList.remove('is-error'));
+</script>
+</body>
+</html>

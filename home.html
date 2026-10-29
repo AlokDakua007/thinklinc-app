@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="assets/logo.webp">
+<link rel="stylesheet" href="styles.css">
+<title>Home · THINK LINC</title>
+</head>
+<body>
+<main class="phone home">
+  <div class="statusbar" aria-hidden="true"><span class="statusbar__time">9:41</span><img src="assets/status-icons.svg" alt=""></div>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a href="login.html" aria-label="Menu (log out)"><img class="topbar__menu" src="assets/menu.webp" alt=""></a>
+      <div class="topbar__hello">
+        <h1>Hi, Alok</h1>
+        <p id="greeting">Good Morning !</p>
+      </div>
+      <div class="topbar__icons">
+        <a href="#" aria-label="Notifications"><img src="assets/bell.webp" alt=""></a>
+        <a href="#" aria-label="Cart"><img src="assets/cart.webp" alt=""></a>
+      </div>
+    </div>
+  </header>
+
+  <section class="feed">
+    <div class="card points">
+      <span class="points__tile"><img src="assets/coins.webp" alt=""></span>
+      <div class="points__info">
+        <div><p class="points__label">Point balance</p><p class="points__value">50</p></div>
+        <a class="pill" href="#">Redeem</a>
+      </div>
+    </div>
+
+    <div class="banner"><img src="assets/banner.webp" alt="Pentonic by LINC: driven by design"></div>
+
+    <div class="quick">
+      <a class="card quick__card quick__card--blue" href="#">
+        <span class="quick__tile"><img src="assets/order.webp" alt=""></span>
+        <span class="quick__label">Create Order <span class="quick__go"><img src="assets/arrow-blue.webp" alt=""></span></span>
+      </a>
+      <a class="card quick__card quick__card--sun" href="#">
+        <span class="quick__tile"><img src="assets/game.webp" alt=""></span>
+        <span class="quick__label">Play and Win <span class="quick__go"><img src="assets/arrow-yellow.webp" alt=""></span></span>
+      </a>
+    </div>
+
+    <div class="redeem">
+      <div class="redeem__head"><h2>Redeem</h2><a href="#">View all</a></div>
+      <div class="redeem__img"><img src="assets/redeem.webp" alt="Raffles and Redemption catalogue"></div>
+    </div>
+  </section>
+
+  <nav class="tabbar" aria-label="Main">
+    <div class="tabbar__inner">
+      <a class="tab is-active" href="home.html"><img src="assets/nav-home.webp" alt="">Home</a>
+      <a class="tab" href="#"><img src="assets/nav-orders.webp" alt="">Orders</a>
+      <a class="tab" href="#"><img src="assets/nav-play.webp" alt="">Play</a>
+      <a class="tab" href="#"><img src="assets/nav-rewards.webp" alt="">Rewards</a>
+      <a class="tab" href="#"><img src="assets/nav-profile.webp" alt="">Profile</a>
+    </div>
+  </nav>
+</main>
+<script>
+  const h = new Date().getHours();
+  document.getElementById('greeting').textContent =
+    h < 12 ? 'Good Morning !' : h < 17 ? 'Good Afternoon !' : 'Good Evening !';
+</script>
+</body>
+</html>
